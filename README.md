@@ -41,3 +41,17 @@ At the end of this project, you are expected to be able to explain to anyone, wi
     No more than 5 functions per file
     All your header files should be include guarded
     Use system calls only when you need to (why?)
+
+
+
+## Tools
+
+| emacs | draw.io | google doc |
+|:---:|:---:|:---:|
+| <img width="50" height="50" src=./pictures/logo_emacs.png> | <img width ="50" height="50" src=./pictures/logo_drawio.png> | <img width="55" height="55" src=./pictures/logo_google_doc.png> |
+
+## Authors
+
+| Julien DUFFAY | Rémi Marçais |
+|:---:|:---:|
+|<a href="https://www.linkedin.com/in/julien-duffay-206822a5/"> <img alt="Julien DUFFAY Linkedin" width="40px" src=./pictures/logo_linkedin.png> <a href="https://github.com/julien3641"> <img alt="Julien DUFFAY Github" width="40px" src=./pictures/logo_github.png> | <a href="https://www.linkedin.com/in/r%C3%A9mi-mar%C3%A7ais-274a4421a/"> <img alt="Rémi Marçais Linkedin" width="40px" src=./pictures/logo_linkedin.png> <a href="https://github.com/rmarcais"> <img alt="Elodie RIOU Github" width="40px" src=./pictures/logo_github.png> |
