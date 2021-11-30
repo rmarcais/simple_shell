@@ -1,5 +1,5 @@
 /**
- * _strlen - computes the size of str
+ * _strlen - computes the size of str.
  * @str: points to a char
  * Return: count.
  */
