@@ -2,23 +2,42 @@ Hello Julien & Rémi jd
 
 ## Background Context
 
-This a team project. We had to create a Simple shell !
+This is a team project. We have create a Simple shell !
 
-Our team, my friend an me (Rémi and Julien, respectively):
+Our team - Rémi and Julien - respectively - :
 
 ![Team project Simple Shell](./pictures/team.png)
 
-## Tasks (mandatory)
+## Learning Objectives
 
+At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
+#### General
 
-0. README, man, AUTHORS
-mandatory
+    Who designed and implemented the original Unix operating system
+    Who wrote the first version of the UNIX shell
+    Who invented the B programming language (the direct predecessor to the C programming language)
+    Who is Ken Thompson
+    How does a shell work
+    What is a pid and a ppid
+    How to manipulate the environment of the current process
+    What is the difference between a function and a system call
+    How to create processes
+    What are the three prototypes of main
+    How does the shell use the PATH to find the programs
+    How to execute another program with the execve system call
+    How to suspend the execution of a process until one of its children terminates
+    What is EOF / “end-of-file”?
 
-    Write a README
-    Write a man for your shell.
-    You should have an AUTHORS file at the root of your repository, listing all individuals having contributed content to the repository. Format, see Docker
+## Requirements
 
-Repo:
+#### General
 
-    GitHub repository: simple_shell
-    File: README.md, man_1_simple_shell, AUTHORS
+    Allowed editors: vi, vim, emacs
+    All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
+    All your files should end with a new line
+    A README.md file, at the root of the folder of the project is mandatory
+    Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
+    Your shell should not have any memory leaks
+    No more than 5 functions per file
+    All your header files should be include guarded
+    Use system calls only when you need to (why?)
