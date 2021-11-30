@@ -5,7 +5,8 @@ Hello Julien & Rémi jd
 This a team project. We had to create a Simple shell !
 
 Our team, my friend an me (Rémi and Julien, respectively):
-![Team project Simple Shell](./pictures/team.xcf)
+
+![Team project Simple Shell](./pictures/team.png)
 
 ## Tasks (mandatory)
 
