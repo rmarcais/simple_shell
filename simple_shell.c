@@ -19,6 +19,10 @@ int main(void)
 			free(line);
 			exit(EXIT_FAILURE);
 		}
+		if (line[0] == '\n')
+		{
+			continue;
+		}
 		toks = create_array(line, " :'\n''\t'");
 		if (execute(toks) == -1)
 		{
@@ -28,5 +32,5 @@ int main(void)
 		}
 		free(toks);
 	}
-	exit(EXIT_SUCCESS);
+	exit (EXIT_SUCCESS);
 }
