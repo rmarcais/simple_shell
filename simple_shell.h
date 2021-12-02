@@ -13,4 +13,8 @@ char *_getenv(const char *name);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *str);
 int _putchar(char c);
+char **create_array(char *line, char *delimiter);
+char *_memcpy(char *dest, char *src, unsigned int n);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+int execute(char **av);
 #endif

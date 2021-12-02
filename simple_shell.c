@@ -2,8 +2,8 @@
 int main(void)
 {
 	char **toks;
-	char *line = NULL, *token;
-	int int_mode = 1, i = 0, pid;
+	char *line = NULL;
+	int int_mode = 1, n;
 	size_t buf = 0;
 
 	while (int_mode)
@@ -13,29 +13,20 @@ int main(void)
 		{
 			write(STDOUT_FILENO, "#cisfun$ ", 9);
 		}
-		getline(&line, &buf, stdin);
-		toks = malloc(sizeof(char *) * 1);
-		token = strtok(line, "' ':'\n''\t'");
-		while (token != NULL)
+		n = getline(&line, &buf, stdin);
+		if (n == -1)
 		{
-			toks[i] = strdup(token);
-			token = strtok(NULL, " :'\n''\t'");
-			toks = realloc(toks, sizeof(char *));
-			i++;
+			free(line);
+			exit(EXIT_FAILURE);
 		}
-		toks[i] = token;
-		free(token);
-		pid = fork();
-		if(!pid)
+		toks = create_array(line, " :'\n''\t'");
+		if (execute(toks) == -1)
 		{
-			if (execve(toks[0], toks, NULL) == -1)
-			{
-				free(toks);
-				printf("Error\n");
-			}
+			free(line);
+			free(toks);
+			break;
 		}
-		i = 0;
-		wait(NULL);
+		free(toks);
 	}
-	return (0);
+	exit(EXIT_SUCCESS);
 }

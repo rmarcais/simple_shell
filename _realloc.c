@@ -1,10 +1,4 @@
-#include "main.h"
-#include <stdlib.h>
-
-
-char *_memcpy(char *dest, char *src, unsigned int n);
-
-
+#include "simple_shell.h"
 /**
  * _realloc - reallocation of memory in new size
  * @ptr: pointeur
@@ -12,7 +6,6 @@ char *_memcpy(char *dest, char *src, unsigned int n);
  * @new_size: last size
  * Return: nptr
  */
-
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 
