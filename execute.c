@@ -20,5 +20,5 @@ int execute(char **av)
 	}
 	else
 		wait(NULL);
-	return (0);
+	return (1);
 }

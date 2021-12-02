@@ -9,7 +9,8 @@ int main(void)
 {
 	char **toks;
 	char *line = NULL;
-	int int_mode = 1, n;
+	int int_mode = 1;
+	int n;
 	size_t buf = 0;
 
 	while (int_mode)
