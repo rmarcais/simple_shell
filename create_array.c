@@ -15,16 +15,16 @@ char **create_array(char *line, char *delimiter)
 
 	av = malloc(sizeof(char *) * 1);
 	if (av == NULL)
-		exit (-1);
+		exit(-1);
 	token = strtok(line, delimiter);
 	while (token != NULL)
 	{
 		av[i] = token;
 		token = strtok(NULL, delimiter);
-		av = _realloc(av, sizeof(av) *(i + 1), (sizeof(av) * (i + 1)
-							+ sizeof(char *)));
+		av = _realloc(av, sizeof(av) * (i + 1),
+			      (sizeof(av) * (i + 1) + sizeof(char *)));
 		if (av == NULL)
-		  exit (-1);
+			exit(-1);
 		i++;
 	}
 	av[i] = token;
