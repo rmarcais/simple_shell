@@ -1,4 +1,10 @@
 #include "simple_shell.h"
+
+/**
+ * main - The main function displays the simple shell
+ * Return: Exit the function on success
+ */
+
 int main(void)
 {
 	char **toks;

@@ -1,10 +1,11 @@
 #include "simple_shell.h"
 /**
- * _realloc - reallocation of memory in new size
+ * _realloc - take the previous size of the  memory
+ * and put it in a new size
  * @ptr: pointeur
  * @old_size: first size
  * @new_size: last size
- * Return: nptr
+ * Return: The pointer nptr
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
