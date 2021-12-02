@@ -1,3 +1,4 @@
+#include "simple_shell.h"
 /**
  * _strlen - computes the size of str.
  * @str: points to a char
