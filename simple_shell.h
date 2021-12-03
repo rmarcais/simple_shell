@@ -9,6 +9,7 @@
 #include <limits.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+extern char **environ;
 char *_getenv(const char *name);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *str);
@@ -17,4 +18,5 @@ char **create_array(char *line, char *delimiter);
 char *_memcpy(char *dest, char *src, unsigned int n);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 int execute(char **av);
+int exist(char **av);
 #endif

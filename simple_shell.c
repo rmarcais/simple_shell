@@ -12,6 +12,7 @@ int main(void)
 	int int_mode = 1;
 	int n;
 	size_t buf = 0;
+	struct stat st;
 
 	while (int_mode)
 	{
@@ -31,13 +32,13 @@ int main(void)
 			continue;
 		}
 		toks = create_array(line, " :'\n''\t'");
-		if (execute(toks) == -1)
+		if (stat(toks[0], &st) == 0)
+			execute(toks);
+		else
 		{
-			free(line);
-			free(toks);
-			break;
+			perror(toks[0]);
 		}
 		free(toks);
 	}
-	exit (EXIT_SUCCESS);
+	exit(EXIT_SUCCESS);
 }

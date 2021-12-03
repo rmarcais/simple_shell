@@ -11,8 +11,6 @@ char *_getenv(const char *name)
 	char *token;
 	int i;
 
-	extern char **environ;
-
 	for (i = 0; environ[i]; i++)
 	{
 		token = strtok(environ[i], "=");
