@@ -9,20 +9,17 @@
 char *exist(char *av)
 {
 	struct stat st;
-	char *path, *token, *cppath = NULL, *strtemp;
+	char *path, *bin = NULL, *token;
 	char **mainpath;
 	int i = 0;
 
 	if (stat(av, &st) == 0)
 		return (av);
-	path = _getenv("PATH");
+	path = strdup(getenv("PATH"));
 	mainpath = malloc(sizeof(char *));
 	if (mainpath == NULL)
 		return (NULL);
-	cppath = malloc(strlen(path) + 1);
-	cppath = strcpy(cppath, path);
-	token = strtok(cppath, ":");
-	printf("token: %s\n", token);
+	token = strtok(path, ":");
 	while (token != NULL)
 	{
 		mainpath[i] = token;
@@ -34,23 +31,25 @@ char *exist(char *av)
 		i++;
 	}
 	mainpath[i] = token;
-	i = 1;
-	while (mainpath[i] != NULL)
+	free(path);
+	path = NULL;
+	for (i = 0; mainpath[i]; i++)
 	{
-		mainpath[i] = strcat(mainpath[i], "/");
-		  mainpath[i] = strcat(mainpath[i], av);
-		printf("%s\n", mainpath[i]);
-		if (stat(mainpath[i], &st) == 0)
+		bin = calloc(sizeof(char), (strlen(mainpath[i])
+					    + 1 + strlen(av) + 1));
+		if (bin == NULL)
+			return (NULL);
+		_strcat(bin, mainpath[i]);
+		_strcat(bin, "/");
+		strcat(bin, av);
+		if (stat(bin, &st) == 0)
 		{
-			strtemp = mainpath[i];
-			token = NULL;
-			path = NULL;
 			free(mainpath);
-			return (strtemp);
-			}
-		i++;
+			return (bin);
+		}
+		free(bin);
+		bin = NULL;
 	}
 	free(mainpath);
-	free(cppath);
 	return (NULL);
 }
