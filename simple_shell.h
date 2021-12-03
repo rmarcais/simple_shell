@@ -18,5 +18,5 @@ char **create_array(char *line, char *delimiter);
 char *_memcpy(char *dest, char *src, unsigned int n);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 int execute(char **av);
-int exist(char **av);
+char *exist(char *av);
 #endif
