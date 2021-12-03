@@ -6,19 +6,14 @@
  * Return: On success 0.
  * On error, -1 is returned.
  */
-int exist(char *av)
+char *exist(char *av)
 {
 	char *path;
 	int i;
 	struct stat st;
 
+	char *path;
+
 	if (stat(av, &st) == 0)
-
-	path = _getenv("PATH");
-
-	mainpath = malloc(sizeof(char *));
-	if (mainpath == 0)
-	{
-		return (NULL);
-	}
-	
+		return (av);
+}

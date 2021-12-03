@@ -8,11 +8,11 @@
 int main(void)
 {
 	char **toks;
-	char *line = NULL;
+	char *line = NULL, *tmp;
 	int int_mode = 1;
 	int n;
 	size_t buf = 0;
-	struct stat st;
+	/*struct stat st;*/
 
 	while (int_mode)
 	{
@@ -32,11 +32,13 @@ int main(void)
 			continue;
 		}
 		toks = create_array(line, " :'\n''\t'");
-		if (stat(toks[0], &st) == 0)
+		tmp = toks[0];
+		toks[0] = exist(toks[0]);
+		if (toks[0] != NULL)
 			execute(toks);
 		else
 		{
-			perror(toks[0]);
+			perror(tmp);
 		}
 		free(toks);
 	}
