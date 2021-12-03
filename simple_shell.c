@@ -40,6 +40,7 @@ int main(void)
 		{
 			perror(tmp);
 		}
+		tmp = NULL;
 		free(toks);
 	}
 	exit(EXIT_SUCCESS);
