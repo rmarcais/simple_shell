@@ -20,4 +20,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 int execute(char **av);
 char *exist(char *av);
 char *_strcat(char *dest, char *src);
+char **split_path(char *av, char *delimiter);
+char *_strdup(char *str);
 #endif

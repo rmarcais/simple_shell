@@ -10,7 +10,7 @@ int execute(char **av)
 {
 	int pid = fork();
 
-	if(!pid)
+	if (!pid)
 	{
 		if (execve(av[0], av, NULL) == -1)
 		{
