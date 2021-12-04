@@ -1,15 +1,33 @@
 #ifndef SIMPLE_SHELL_H
 #define SIMPLE_SHELL_H
-#include<stdio.h>
-#include<string.h>
-#include<stdlib.h>
-#include<unistd.h>
-#include<sys/types.h>
-#include<sys/wait.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 #include <limits.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+/**
+ * struct specifier - Structure type defining _printf.
+ *
+ * @specifier: a character representing the data type.
+ * @f: fonction pointer to a functions that prints a data type.
+ */
+typedef struct specifier
+{
+	char *specifier;
+	int (*f)(va_list ap);
+} spe;
 extern char **environ;
+int _printf(const char *format, ...);
+int print_s(va_list ap);
+int print_c(va_list ap);
+int print_int(va_list ap);
+int print_percent(va_list ap);
+int convert_binary(va_list ap);
 char *_getenv(const char *name);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *str);
@@ -25,5 +43,8 @@ char *_strdup(char *str);
 void *_calloc(unsigned int nmemb, unsigned int size);
 char *_memset(char *s, char b, unsigned int n);
 void free_array(char **array);
-void handle_err(char *av, int loop);
+void handle_err(char *av, char **argv, int loop);
+int isbuiltin(char *usrcommand);
+int exebi(char *av0, char *av1);
+void bi_cd(char *directory);
 #endif
