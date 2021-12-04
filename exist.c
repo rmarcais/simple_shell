@@ -15,22 +15,29 @@ char *exist(char *av)
 
 	if (stat(av, &st) == 0)
 		return (av);
+	path = _strdup(getenv("PATH"));
 	mainpath  = split_path(path, ":");
 	free(path);
 	path = NULL;
 	for (i = 0; mainpath[i]; i++)
 	{
-		bin = calloc(sizeof(char), (strlen(mainpath[i])
-					    + 1 + strlen(av) + 1));
+		bin = _calloc(sizeof(char), (_strlen(mainpath[i])
+					    + 1 + _strlen(av) + 1));
 		if (bin == NULL)
-			return (NULL);
+		{
+			break;
+		}
 		_strcat(bin, mainpath[i]);
 		_strcat(bin, "/");
-		strcat(bin, av);
+		_strcat(bin, av);
 		if (stat(bin, &st) == 0)
 		{
 			free(mainpath);
-			return (bin);
+			mainpath[0] = 0;
+			av = _strdup(bin);
+			free(bin);
+			bin = NULL;
+			return (av);
 		}
 		free(bin);
 		bin = NULL;

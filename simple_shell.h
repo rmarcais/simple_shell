@@ -22,4 +22,8 @@ char *exist(char *av);
 char *_strcat(char *dest, char *src);
 char **split_path(char *av, char *delimiter);
 char *_strdup(char *str);
+void *_calloc(unsigned int nmemb, unsigned int size);
+char *_memset(char *s, char b, unsigned int n);
+void free_array(char **array);
+void handle_err(char *av, int loop);
 #endif
