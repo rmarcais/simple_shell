@@ -10,6 +10,7 @@
 #include <limits.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <signal.h>
 /**
  * struct specifier - Structure type defining _printf.
  *

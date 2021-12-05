@@ -5,6 +5,13 @@
  * @argv: List of arguments
  * Return: Exit the function on success
  */
+void signalHandler(int signum)
+{
+	(void)signum;
+	_putchar('\n');
+	write(STDOUT_FILENO, "#cisfun$ ", 9);
+	fflush(stdout);
+}
 int main(int argc, char **argv)
 {
 	char **toks, *line = NULL, *tmp;
@@ -12,6 +19,7 @@ int main(int argc, char **argv)
 	size_t buf = 0;
 	(void)argc;
 
+	signal(SIGINT, signalHandler);
 	while (int_mode)
 	{
 		if (int_mode == 1)
