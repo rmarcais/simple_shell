@@ -44,7 +44,8 @@ void *_calloc(unsigned int nmemb, unsigned int size);
 char *_memset(char *s, char b, unsigned int n);
 void free_array(char **array);
 void handle_err(char *av, char **argv, int loop);
-int isbuiltin(char *usrcommand);
-int exebi(char *av0, char *av1);
-void bi_cd(char *directory);
+int is_builtin(char *command);
+int builtin_env(void);
+int execute_builtin(char **av, char **argv, int loop, char *arg);
+int builtin_cd(char *av);
 #endif

@@ -8,13 +8,12 @@
 int main(int argc, char **argv)
 {
 	char **toks, *line = NULL, *tmp;
-	int int_mode = 1, n, loop_error = 1;
+	int int_mode = isatty(STDIN_FILENO), n, loop_error = 1;
 	size_t buf = 0;
 	(void)argc;
 
 	while (int_mode)
 	{
-		int_mode = isatty(STDIN_FILENO);
 		if (int_mode == 1)
 			write(STDOUT_FILENO, "#cisfun$ ", 9);
 		n = getline(&line, &buf, stdin);
@@ -29,17 +28,20 @@ int main(int argc, char **argv)
 			continue;
 		toks = create_array(line, " :'\n''\t'");
 		tmp = toks[0];
-		if (isbuiltin(toks[0]) == 1)
-			exebi(toks[0], toks[1]);
-		toks[0] = exist(toks[0]);
-		if (toks[0] != NULL)
+		if (is_builtin(toks[0]) == -1)
 		{
-			execute(toks);
-			if (tmp != toks[0])
-				free(toks[0]);
+			toks[0] = exist(toks[0]);
+			if (toks[0] != NULL)
+			{
+				execute(toks);
+				if (tmp != toks[0])
+					free(toks[0]);
+			}
+			else
+				handle_err(tmp, argv, loop_error);
 		}
 		else
-			handle_err(tmp, argv, loop_error);
+			execute_builtin(toks, argv, loop_error, toks[1]);
 		tmp = NULL;
 		free(toks);
 		loop_error++;
