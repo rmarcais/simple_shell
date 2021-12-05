@@ -1,6 +1,7 @@
+![Holberton France Logo](https://cdn-website.partechpartners.com/media/images/Holberton_School_Logo.original.png)
 ## Background Context
 
-This is a team project. We have create a Simple shell !
+This is a team project for Holberton School. We have to create a Simple shell !
 
 Our team - Rémi and Julien - respectively - :
 
@@ -103,19 +104,37 @@ hsh main.c shell.c test_ls_2
 $
 ```
 ### Table
-| Files | Description |
-|-|-|
-| [AUTHORS](link)| AUTHORS page|
-| [_putchar.c](link) | putchar function |
-| [_strcmp.c](link) | strcmp function |
-| [_strlen.c](link) | strlen function |
+| Files | Description | Prototype |
+|-|-| - |
+| [AUTHORS](link)| AUTHORS page |
+| [_putchar.c](link) | puts a character | ```int _putchar(char c)``` |
+| [_strcmp.c](link) | compares two strings | ```int _strcmp(char *s1, char *s2)``` |
+| [_strlen.c](link) | computes the length of a string | ```int _strlen(char *str)``` |
+| [_calloc.c](link)| allocates memory for an array | ```void *_calloc(unsigned int nmemb, unsigned int size)``` |
+| [_getenv.c](link) | finds an environment variable | ```char *_getenv(const char *name)``` |
+| [_printf](link) | reproduction of the fonction printf | ```int _printf(const char *format, ...)``` |
+| [_realloc.c](link) | changes the size of a memory block | ```void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)``` |
+| [_strcat.c](link)| concatenates two strings| ```char *_strcat(char *dest, char *src)``` |
+| [_strdup.c](link) | duplicates a string | ```char *_strdup(char *str)``` |
+| [_create_array.c](link) | creates an array containing the user input | ```char **create_array(char *line, char *delimiter)``` |
+| [_execute.c](link) | executes the command given by the user | ```int execute(char **av)``` |
+| [execute_builtin.c](link)| executes a built-in given by the user | ```int execute_builtin(char **av, char **argv, int loop, char *arg)``` |
+| [exist.c](link) | checks if a command exists in the PATH | ```char *exist(char *av)``` |
+| [free_array.c](link) | frees an array | ```void free_array(char **array)``` |
+| [functions.c](link) | fonctions used by the fonction _printf | ```int (*f)(va_list ap);``` |
+| [handle_err.c](link)| handles errors | ```void handle_err(char *av, char **argv, int loop)``` |
+| [is_builtin.c](link) | checks if the user input is a built-in | ```int is_builtin(char *command)``` |
+| [simple_shell.c](link) | main function | ```int main(int argc, char **argv)``` |
+| [split_path.c](link) | creates an array containing the directories of the PATH | ```char **split_path(char *av, char *delimiter)``` |
+| [simple_shell.h](link)| header file |
+
 
 
 ## Tools
 
-| emacs | draw.io | google doc |
-|:---:|:---:|:---:|
-| <img width="50" height="50" src=./pictures/logo_emacs.png> | <img width ="50" height="50" src=./pictures/logo_drawio.png> | <img width="55" height="55" src=./pictures/logo_google_doc.png> |
+| emacs | google doc |
+|:---:|:---:|
+| <img width="50" height="50" src=./pictures/logo_emacs.png> | <img width="55" height="55" src=./pictures/logo_google_doc.png> |
 
 ## Authors
 
