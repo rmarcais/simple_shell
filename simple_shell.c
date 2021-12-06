@@ -23,7 +23,7 @@ void signalHandler(int signum)
 int main(int argc, char **argv)
 {
 	char **toks, *line = NULL, *tmp;
-	int int_mode = 1, n, loop_error = 1;
+	int int_mode = 1, n, loop_error = 0;
 	size_t buf = 0;
 	(void)argc;
 
@@ -33,15 +33,16 @@ int main(int argc, char **argv)
 		int_mode = isatty(STDIN_FILENO);
 		if (int_mode == 1)
 			write(STDOUT_FILENO, "#cisfun$ ", 9);
+		loop_error++;
 		n = getline(&line, &buf, stdin);
 		if (parseline(n, line) == -1)
 			exit(EXIT_FAILURE);
-		if (line[0] == '\n')
+		toks = create_array(line, " '\n'");
+		if (toks[0] == NULL)
 		{
-			loop_error++;
+			free(toks);
 			continue;
 		}
-		toks = create_array(line, " '\n'");
 		tmp = toks[0];
 		if (is_builtin(toks[0]) == -1)
 		{
@@ -61,7 +62,6 @@ int main(int argc, char **argv)
 			execute_builtin(toks, argv, loop_error, toks[1]);
 		tmp = NULL;
 		free(toks);
-		loop_error++;
 	}
 	exit(EXIT_SUCCESS);
 }
