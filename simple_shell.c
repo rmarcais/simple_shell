@@ -53,7 +53,9 @@ int main(int argc, char **argv)
 					free(toks[0]);
 			}
 			else
+			{
 				handle_err(tmp, argv, loop_error, line);
+			}
 		}
 		else
 			execute_builtin(toks, argv, loop_error, toks[1]);
