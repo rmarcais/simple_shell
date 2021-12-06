@@ -11,27 +11,23 @@ void signalHandler(int signum)
 	_putchar('\n');
 	write(STDOUT_FILENO, "#cisfun$ ", 9);
 	fflush(stdout);
-}
+	}
 int main(int argc, char **argv)
 {
 	char **toks, *line = NULL, *tmp;
-	int int_mode = isatty(STDIN_FILENO), n, loop_error = 1;
+	int int_mode = 1, n, loop_error = 1;
 	size_t buf = 0;
 	(void)argc;
 
 	signal(SIGINT, signalHandler);
 	while (int_mode)
 	{
+		int_mode = isatty(STDIN_FILENO);
 		if (int_mode == 1)
 			write(STDOUT_FILENO, "#cisfun$ ", 9);
 		n = getline(&line, &buf, stdin);
-		if (n == -1 || _strcmp(line, "exit\n") == 0)
-		{
-			free(line);
-			if (n == -1)
-				_putchar('\n');
+		if (parseline(n, line) == -1)
 			exit(EXIT_FAILURE);
-		}
 		if (line[0] == '\n')
 			continue;
 		toks = create_array(line, " :'\n''\t'");

@@ -49,4 +49,5 @@ int is_builtin(char *command);
 int builtin_env(void);
 int execute_builtin(char **av, char **argv, int loop, char *arg);
 int builtin_cd(char *av);
+int parseline(int n, char *line);
 #endif
