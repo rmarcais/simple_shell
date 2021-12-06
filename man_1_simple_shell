@@ -1,0 +1,57 @@
+.\" Manpage for simple_shell 1
+.\" contact 3641@holbertonschool.com to correct errors or typos
+.TH simple_shell 1 "06 december 2021" "1.0" "simple_shell man page"
+.SH NAME
+
+simple_shell \- command interpreter
+
+.SH SYNOPSIS
+
+\fB ./hsh is the executable
+
+.SH DESCRIPTION
+
+The hsh simple_shell is a command-line interpreter that provides a command line user interface for Unix-like operating systems.
+The shell is both an interactive command language and a scripting language, and is used by the operating system to control the execution of the system using shell scripts.
+
+.SS Definition:
+
+.SS Builtins
+
+This section lists the builtin commands which are builtin because they
+need to perform some operation that can't be performed by a separate
+process.
+
+.TS
+allbox tab(|);
+c s s
+c s c
+c s c
+c s c
+c s c.
+Builtins
+alias | list all aliases
+pwd | display the path of the current directory
+exit | this command will exit the shell
+cd + [directoryname] | will bring you to the directory expected
+env | This function will list all the environ
+.TE
+
+.SH OPTIONS
+
+There can be some options like for the function ls. Like ls -l which will list file from the directory in long format.
+
+.SH RETURN VALUE
+
+If the command is welled execute, the list will appear. If it fail, a error message will appear.
+
+.SH EXAMPLES
+
+
+.SH AUTHORS
+
+Written by Julien DUFFAY & Rémi MARCAIS
+
+.SH COPYRIGHT
+
+©Holberton School Laval
