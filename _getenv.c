@@ -6,7 +6,7 @@
  * Return: the value of the variable
  */
 
-char *_getenv(const char *name)
+char *_getenv(char *name)
 {
 	char *token;
 	int i;
@@ -14,7 +14,7 @@ char *_getenv(const char *name)
 	for (i = 0; environ[i]; i++)
 	{
 		token = strtok(environ[i], "=");
-		if (strcmp(token, name) == 0)
+		if (_strcmp(token, name) == 0)
 		{
 			token = strtok(NULL, "=");
 			return (token);

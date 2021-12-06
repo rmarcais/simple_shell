@@ -1,6 +1,6 @@
 #include "simple_shell.h"
 
-x/**
+/**
  * handle_err - manage errors
  * @av: the command of the user
  * @argv: number of arguments

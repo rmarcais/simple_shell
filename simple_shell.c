@@ -22,6 +22,7 @@ void signalHandler(int signum)
 
 int main(int argc, char **argv)
 {
+	/*dfdfdfd*/
 	char **toks, *line = NULL, *tmp;
 	int int_mode = 1, n, loop_error = 1;
 	size_t buf = 0;

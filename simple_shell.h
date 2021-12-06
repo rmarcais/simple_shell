@@ -29,7 +29,7 @@ int print_c(va_list ap);
 int print_int(va_list ap);
 int print_percent(va_list ap);
 int convert_binary(va_list ap);
-char *_getenv(const char *name);
+char *_getenv(char *name);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *str);
 int _putchar(char c);

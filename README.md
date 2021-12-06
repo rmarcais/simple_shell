@@ -1,6 +1,8 @@
-![Holberton France Logo](https://cdn-website.partechpartners.com/media/images/Holberton_School_Logo.original.png)
-## Background Context
+<p align = "center">
+<img src = https://cdn-website.partechpartners.com/media/images/Holberton_School_Logo.original.png>
+</p>
 
+## Background Context
 This is a team project for Holberton School. We have to create a Simple shell !
 
 Our team - Rémi and Julien - respectively - :
@@ -125,6 +127,7 @@ $
 | [handle_err.c](link)| handles errors | ```void handle_err(char *av, char **argv, int loop)``` |
 | [is_builtin.c](link) | checks if the user input is a built-in | ```int is_builtin(char *command)``` |
 | [simple_shell.c](link) | main function | ```int main(int argc, char **argv)``` |
+| [parseline.c](link) | pase the user input | ```int parseline(int n, char *line)``` |
 | [split_path.c](link) | creates an array containing the directories of the PATH | ```char **split_path(char *av, char *delimiter)``` |
 | [simple_shell.h](link)| header file |
 
