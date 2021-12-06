@@ -1,10 +1,10 @@
 #include "simple_shell.h"
 /**
- * main - The main function displays the simple shell
- * @argc: Number of arguments
- * @argv: List of arguments
- * Return: Exit the function on success
+ * signalHandler - Function that catch the signal of crtl c
+ * @signum: unused
+ * Return: Nothing
  */
+
 void signalHandler(int signum)
 {
 	(void)signum;
@@ -12,6 +12,14 @@ void signalHandler(int signum)
 	write(STDOUT_FILENO, "#cisfun$ ", 9);
 	fflush(stdout);
 	}
+
+/**
+ * main - The main function displays the simple shell
+ * @argc: Number of arguments
+ * @argv: List of arguments
+ * Return: Exit the function on success
+ */
+
 int main(int argc, char **argv)
 {
 	char **toks, *line = NULL, *tmp;
@@ -29,7 +37,10 @@ int main(int argc, char **argv)
 		if (parseline(n, line) == -1)
 			exit(EXIT_FAILURE);
 		if (line[0] == '\n')
+		{
+			loop_error++;
 			continue;
+		}
 		toks = create_array(line, " :'\n''\t'");
 		tmp = toks[0];
 		if (is_builtin(toks[0]) == -1)
@@ -42,7 +53,7 @@ int main(int argc, char **argv)
 					free(toks[0]);
 			}
 			else
-				handle_err(tmp, argv, loop_error);
+				handle_err(tmp, argv, loop_error, line);
 		}
 		else
 			execute_builtin(toks, argv, loop_error, toks[1]);

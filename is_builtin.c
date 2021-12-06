@@ -1,4 +1,13 @@
 #include "simple_shell.h"
+
+/**
+ * is_builtin - function that compare the output with an array
+ * @command: takes the name of the command
+ * Return: Return -1 on error and 1 on succeed
+ */
+
+
+
 int is_builtin(char *command)
 {
 	char *built_in[] = {"cd", "env", "printenv",  NULL};
