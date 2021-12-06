@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 			loop_error++;
 			continue;
 		}
-		toks = create_array(line, " :'\n''\t'");
+		toks = create_array(line, " '\n'");
 		tmp = toks[0];
 		if (is_builtin(toks[0]) == -1)
 		{
