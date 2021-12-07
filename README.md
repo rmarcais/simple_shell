@@ -105,12 +105,46 @@ hsh main.c shell.c test_ls_2
 hsh main.c shell.c test_ls_2
 $
 ```
+
+### Checking memory leak
+
+To check if our program countains memory leaks, we used the command
+```
+valgrind <executable>
+```
+Valgrind dsiplays the prompt and you have to run a command ("ls", "pwd", "ls -l"...):
+```
+#cisfun$ valgrind ./hsh
+==14873== Memcheck, a memory error detector
+==14873== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==14873== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==14873== Command: ./hsh
+==14873== 
+#cisfun$ (Enter command here)
+```
+
+When you exit the shell (with Ctrl -d or "exit"), you can see a summary of the memory leaks:
+```
+#cisfun$ exit
+==14970== 
+==14970== HEAP SUMMARY:
+==14970==     in use at exit: 0 bytes in 0 blocks
+==14970==   total heap usage: 20 allocs, 20 frees, 1,781 bytes allocated
+==14970== 
+==14970== All heap blocks were freed -- no leaks are possible
+==14970== 
+==14970== Use --track-origins=yes to see where uninitialised values come from
+==14970== For lists of detected and suppressed errors, rerun with: -s
+==14970== ERROR SUMMARY: 150 errors from 7 contexts (suppressed: 0 from 0)
+```
+So, here, you can see there is no memory leaks ;-) 
+
 ### Table
 | Files | Description | Prototype |
 |-|-| - |
 | [AUTHORS](link)| AUTHORS page |
 | [_putchar.c](https://github.com/rmarcais/simple_shell/blob/main/_putchar.c) | puts a character | ```int _putchar(char c)``` |
-| [_strcmp.c](https://github.com/rmarcais/simple_shell/blob/main/_strcmp.c | compares two strings | ```int _strcmp(char *s1, char *s2)``` |
+| [_strcmp.c](https://github.com/rmarcais/simple_shell/blob/main/_strcmp.c) | compares two strings | ```int _strcmp(char *s1, char *s2)``` |
 | [_strlen.c](https://github.com/rmarcais/simple_shell/blob/main/_strlen.c) | computes the length of a string | ```int _strlen(char *str)``` |
 | [_calloc.c](https://github.com/rmarcais/simple_shell/blob/main/_calloc.c)| allocates memory for an array | ```void *_calloc(unsigned int nmemb, unsigned int size)``` |
 | [_getenv.c](https://github.com/rmarcais/simple_shell/blob/main/_getenv.c) | finds an environment variable | ```char *_getenv(const char *name)``` |
@@ -146,6 +180,12 @@ Extract:
 | emacs | google doc |
 |:---:|:---:|
 | <img width="50" height="50" src=./pictures/logo_emacs.png> | <img width="55" height="55" src=./pictures/logo_google_doc.png> |
+
+## Cloning the repo
+To clone thid repository, run the command:
+```
+git clone git@github.com:rmarcais/simple_shell.git
+```
 
 ## Authors
 
