@@ -175,6 +175,26 @@ man ./man_1_simple_shell
 Extract:
 ![Extract Man Page](https://github.com/rmarcais/simple_shell/blob/main/pictures/man_page.png?raw=true)
 
+## Challenges and group work
+
+### *First part*
+
+Rémi and I started the project by learning the concepts. The first part, has been doing some exercises that we carried on with an other group. This part was about to learn the main functions we were expected to use for the simple_shell program. This part was very intensive, interesting and collaborative.
+
+### *Second part*
+After 3 or 4 days of work on the exercises, we started coding both together during 2 or 3 days to develop the main part of the function. After this part together, we split the work in two pieces and so worked alone on our own objectives. 
+The main objective was to learn :
+
+- How working with Git and Github to be able to code on our own and be well synchronize with github.
+
+- The memory leaks, were the biggest part of the difficulties we met.
+
+Rémi took the lead on the development part and I took the lead to write the article and the man page.
+### *Last part*
+After the week end before the deadline, which was on the Wednesday, we did a big overview of our work and continued to improve it.
+The experience was great, and the collaboration both together has been quiet fluent and easy.
+
+
 ## Tools
 
 | emacs | google doc |
