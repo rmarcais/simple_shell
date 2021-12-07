@@ -17,7 +17,7 @@ The shell is both an interactive command language and a scripting language, and 
 
 .SH LEXICAL STRUCTURE
 
-The shell reads input in terms of lines from a file and breaks it up into words at whitespacs, and at certain sequences of characters that are special to the shell calles "operators".
+The shell reads input in terms of lines from a file and breaks it up into words at white spaces, and at certain sequences of characters that are special to the shell calls "operators".
 
 .SH DEFINITION
 
@@ -55,11 +55,15 @@ printev | This function will list all the environ
 
 If the command name doesn't match a function or builtin, the command is searched for as a normal program in the file system. When a normal program is executed, the shell runs the program, passing the arguments and the environment to the program.
 
-\fB EXAMPLE :
+\fBEXAMPLE :\fP
 
-function "ls"
+ 1- Function "ls -l"
 
-The ls function is executed in the shell and lists all the file of the current directory.
+The ls -l function is executed in the shell and lists all the file of the current directory in a long format. "-l" is an option of the "ls" command and for more information about this function input "man ls" in your shell.
+
+ 2- When Ctrl + c is type on the keyboard, it doesn't exit and display the ^c with return to the line.
+
+ 3- PWD allows to obtain the path of the current directory.
 
 .SH OPTIONS
 
@@ -68,6 +72,11 @@ There can be some options like for the function ls. Like ls -l which will list f
 .SH RETURN VALUE
 
 If the command is welled execute, the list will appear. If it fail, an error message will be displayed.
+
+.SH SEE ALSO
+
+.PP
+Page concept: https://intranet.hbtn.io/concepts/64
 
 .SH AUTHORS
 
