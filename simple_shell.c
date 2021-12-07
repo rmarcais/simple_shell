@@ -37,8 +37,8 @@ int main(int argc, char **argv)
 		n = getline(&line, &buf, stdin);
 		if (parseline(n, line) == -1)
 			exit(EXIT_FAILURE);
-		toks = create_array(line, " '\n'");
-		if (toks[0] == NULL)
+		toks = create_array(line, " '\n':");
+		if (toks[0] == NULL || _strcmp(toks[0], ".") == 0)
 		{
 			free(toks);
 			continue;
@@ -54,9 +54,7 @@ int main(int argc, char **argv)
 					free(toks[0]);
 			}
 			else
-			{
 				handle_err(tmp, argv, loop_error, line);
-			}
 		}
 		else
 			execute_builtin(toks, argv, loop_error, toks[1]);
