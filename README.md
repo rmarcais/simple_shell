@@ -109,29 +109,37 @@ $
 | Files | Description | Prototype |
 |-|-| - |
 | [AUTHORS](link)| AUTHORS page |
-| [_putchar.c](link) | puts a character | ```int _putchar(char c)``` |
-| [_strcmp.c](link) | compares two strings | ```int _strcmp(char *s1, char *s2)``` |
-| [_strlen.c](link) | computes the length of a string | ```int _strlen(char *str)``` |
-| [_calloc.c](link)| allocates memory for an array | ```void *_calloc(unsigned int nmemb, unsigned int size)``` |
-| [_getenv.c](link) | finds an environment variable | ```char *_getenv(const char *name)``` |
-| [_printf](link) | reproduction of the fonction printf | ```int _printf(const char *format, ...)``` |
-| [_realloc.c](link) | changes the size of a memory block | ```void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)``` |
-| [_strcat.c](link)| concatenates two strings| ```char *_strcat(char *dest, char *src)``` |
-| [_strdup.c](link) | duplicates a string | ```char *_strdup(char *str)``` |
-| [_create_array.c](link) | creates an array containing the user input | ```char **create_array(char *line, char *delimiter)``` |
-| [_execute.c](link) | executes the command given by the user | ```int execute(char **av)``` |
-| [execute_builtin.c](link)| executes a built-in given by the user | ```int execute_builtin(char **av, char **argv, int loop, char *arg)``` |
-| [exist.c](link) | checks if a command exists in the PATH | ```char *exist(char *av)``` |
+| [_putchar.c](https://github.com/rmarcais/simple_shell/blob/main/_putchar.c) | puts a character | ```int _putchar(char c)``` |
+| [_strcmp.c](https://github.com/rmarcais/simple_shell/blob/main/_strcmp.c | compares two strings | ```int _strcmp(char *s1, char *s2)``` |
+| [_strlen.c](https://github.com/rmarcais/simple_shell/blob/main/_strlen.c) | computes the length of a string | ```int _strlen(char *str)``` |
+| [_calloc.c](https://github.com/rmarcais/simple_shell/blob/main/_calloc.c)| allocates memory for an array | ```void *_calloc(unsigned int nmemb, unsigned int size)``` |
+| [_getenv.c](https://github.com/rmarcais/simple_shell/blob/main/_getenv.c) | finds an environment variable | ```char *_getenv(const char *name)``` |
+| [_printf](https://github.com/rmarcais/simple_shell/blob/main/_printf.c) | reproduction of the fonction printf | ```int _printf(const char *format, ...)``` |
+| [_realloc.c](https://github.com/rmarcais/simple_shell/blob/main/_realloc.c) | changes the size of a memory block | ```void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)``` |
+| [_strcat.c](https://github.com/rmarcais/simple_shell/blob/main/_strcat.c)| concatenates two strings| ```char *_strcat(char *dest, char *src)``` |
+| [_strdup.c](https://github.com/rmarcais/simple_shell/blob/main/_strdup.c) | duplicates a string | ```char *_strdup(char *str)``` |
+| [_create_array.c](https://github.com/rmarcais/simple_shell/blob/main/create_array.c) | creates an array containing the user input | ```char **create_array(char *line, char *delimiter)``` |
+| [_execute.c](https://github.com/rmarcais/simple_shell/blob/main/execute.c) | executes the command given by the user | ```int execute(char **av)``` |
+| [execute_builtin.c](https://github.com/rmarcais/simple_shell/blob/main/execute_builtin.c)| executes a built-in given by the user | ```int execute_builtin(char **av, char **argv, int loop, char *arg)``` |
+| [exist.c](https://github.com/rmarcais/simple_shell/blob/main/exist.c) | checks if a command exists in the PATH | ```char *exist(char *av)``` |
 | [free_array.c](link) | frees an array | ```void free_array(char **array)``` |
-| [functions.c](link) | fonctions used by the fonction _printf | ```int (*f)(va_list ap);``` |
-| [handle_err.c](link)| handles errors | ```void handle_err(char *av, char **argv, int loop)``` |
-| [is_builtin.c](link) | checks if the user input is a built-in | ```int is_builtin(char *command)``` |
-| [simple_shell.c](link) | main function | ```int main(int argc, char **argv)``` |
-| [parseline.c](link) | pase the user input | ```int parseline(int n, char *line)``` |
-| [split_path.c](link) | creates an array containing the directories of the PATH | ```char **split_path(char *av, char *delimiter)``` |
-| [simple_shell.h](link)| header file |
+| [functions.c](https://github.com/rmarcais/simple_shell/blob/main/functions.c) | fonctions used by the fonction _printf | ```int (*f)(va_list ap);``` |
+| [handle_err.c](https://github.com/rmarcais/simple_shell/blob/main/handle_err.c)| handles errors | ```void handle_err(char *av, char **argv, int loop)``` |
+| [is_builtin.c](https://github.com/rmarcais/simple_shell/blob/main/is_builtin.c) | checks if the user input is a built-in | ```int is_builtin(char *command)``` |
+| [simple_shell.c](https://github.com/rmarcais/simple_shell/blob/main/simple_shell.c) | main function | ```int main(int argc, char **argv)``` |
+| [parseline.c](https://github.com/rmarcais/simple_shell/blob/main/parseline.c) | pase the user input | ```int parseline(int n, char *line)``` |
+| [split_path.c](https://github.com/rmarcais/simple_shell/blob/main/split_path.c) | creates an array containing the directories of the PATH | ```char **split_path(char *av, char *delimiter)``` |
+| [simple_shell.h](https://github.com/rmarcais/simple_shell/blob/main/simple_shell.h)| header file |
+| [man_1_simple_shell](https://github.com/rmarcais/simple_shell/blob/main/man_1_simple_shell)| the manual of our shell |
 
+## Man page
+You can open the man page of our shell whith the command 
+```
+man ./man_1_simple_shell
+```
 
+Extract:
+![Extract Man Page](https://github.com/rmarcais/simple_shell/blob/main/pictures/man_page.png?raw=true)
 
 ## Tools
 
