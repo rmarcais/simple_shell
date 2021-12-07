@@ -187,7 +187,7 @@ The main objective was to learn :
 
 - How working with Git and Github to be able to code on our own and be well synchronize with github.
 
-- The memory leaks, was the biggest part of the difficulties we met.
+- The memory leaks, were the biggest part of the difficulties we met.
 
 Rémi took the lead on the development part and I took the lead to write the article and the man page.
 ### *Last part*
