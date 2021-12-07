@@ -14,11 +14,26 @@ simple_shell \- command interpreter
 The hsh simple_shell is a command-line interpreter that provides a command line user interface for Unix-like operating systems.
 The shell is both an interactive command language and a scripting language, and is used by the operating system to control the execution of the system using shell scripts.
 
-.SS Definition:
 
-.SS Builtins
+.SH LEXICAL STRUCTURE
 
-This section lists the builtin commands which are builtin because they
+The shell reads input in terms of lines from a file and breaks it up into words at whitespacs, and at certain sequences of characters that are special to the shell calles "operators".
+
+.SH DEFINITION
+
+The shell interprets the words it reads according to a language, the specification of which is outside the scope of this man page. Essentially though, a line is read and if the first word of the line is not a reserved word, then the shell has recognized a simple command.
+
+There are three types of  commands: shell functions, builtins commands, and normal programs.
+
+.SS SHELL FUNCTIONS
+
+When a shell function is executed, all of the shell positional parameters are set to the arguments of the shell function.
+
+.SS BUILTINS COMMANDS
+
+Shell builtins are executed internally to the shell, without spawning a new process.
+
+This section lists the builtins commands which are builtin because they
 need to perform some operation that can't be performed by a separate
 process.
 
@@ -26,16 +41,25 @@ process.
 allbox tab(|);
 c s s
 c s c
-c s c
-c s c
 c s c.
 Builtins
-alias | list all aliases
+echo | Print the arguments on the standard ouput
 pwd | display the path of the current directory
-exit | this command will exit the shell
+exit or [Ctrl + d] | this command will exit the shell
 cd + [directoryname] | will bring you to the directory expected
 env | This function will list all the environ
+printev | This function will list all the environ
 .TE
+
+.SS NORMAL PROGRAMS
+
+If the command name doesn't match a function or builtin, the command is searched for as a normal program in the file system. When a normal program is executed, the shell runs the program, passing the arguments and the environment to the program.
+
+\fB EXAMPLE :
+
+function "ls"
+
+The ls function is executed in the shell and lists all the file of the current directory.
 
 .SH OPTIONS
 
@@ -43,10 +67,7 @@ There can be some options like for the function ls. Like ls -l which will list f
 
 .SH RETURN VALUE
 
-If the command is welled execute, the list will appear. If it fail, a error message will appear.
-
-.SH EXAMPLES
-
+If the command is welled execute, the list will appear. If it fail, an error message will be displayed.
 
 .SH AUTHORS
 
