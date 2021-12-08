@@ -48,7 +48,7 @@ void free_array(char **array);
 void handle_err(char *av, char **argv, int loop, char *line);
 int is_builtin(char *command);
 int builtin_env(void);
-int execute_builtin(char **av, char **argv, int loop, char *arg);
+int execute_builtin(char **av, char **argv, int loop, char *arg, int *status);
 int builtin_cd(char *av);
 int parseline(int n, char *line);
 #endif

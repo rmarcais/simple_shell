@@ -15,7 +15,7 @@ int execute(char **av)
 		if (execve(av[0], av, NULL) == -1)
 		{
 			perror(av[0]);
-			exit(1);
+			exit(2);
 		}
 	}
 	else

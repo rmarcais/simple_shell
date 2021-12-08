@@ -10,7 +10,7 @@
  */
 
 
-int execute_builtin(char **av, char **argv, int loop, char *arg)
+int execute_builtin(char **av, char **argv, int loop, char *arg, int *status)
 {
 	if (_strcmp(av[0], "cd") == 0)
 	{
@@ -19,15 +19,21 @@ int execute_builtin(char **av, char **argv, int loop, char *arg)
 			_printf("%s: %d: can't cd to %s\n", argv[0], loop, arg);
 			return (-1);
 		}
+		*status = 0;
 		return (1);
 	}
 	if (_strcmp(av[0], "env") == 0 || _strcmp(av[0], "printenv") == 0)
 	{
 		if (av[1] == NULL)
+		{
 			builtin_env();
+			*status = 0;
+		}
 		else
+		{
 			_printf("%s: '%s': No such file or directory\n",
 				av[0], av[1]);
+		}
 	}
 	return (-1);
 }
