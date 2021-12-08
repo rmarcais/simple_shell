@@ -13,7 +13,7 @@ int parseline(int n, char *line)
 	{
 		free(line);
 		if (n == -1)
-			_putchar('\n');
+			/*_putchar('\n');*/
 		return (-1);
 	}
 	else
