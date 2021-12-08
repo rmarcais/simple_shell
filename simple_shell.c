@@ -36,7 +36,7 @@ int main(int argc, char **argv)
 		loop_error++;
 		n = getline(&line, &buf, stdin);
 		if (parseline(n, line) == -1)
-			exit(EXIT_FAILURE);
+			exit(0);
 		toks = create_array(line, " '\n':");
 		if (toks[0] == NULL || _strcmp(toks[0], ".") == 0)
 		{
