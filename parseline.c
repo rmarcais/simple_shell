@@ -7,7 +7,7 @@
  */
 int parseline(int n, char *line)
 {
-	char *token;
+	char *token, *line2;
 
 	if (n == -1 || _strcmp(line, "exit\n") == 0)
 	{
@@ -18,12 +18,20 @@ int parseline(int n, char *line)
 	}
 	else
 	{
-		token = strtok(line, " '\n'");
+		line2 = _strdup(line);
+		token = strtok(line2, " '\n'");
+		if (token == NULL)
+		{
+			free(line2);
+			return (1);
+		}
 		if (_strcmp(token, "exit") == 0)
 		{
 			free(line);
+			free(line2);
 			return (-1);
 		}
 	}
+	free(line2);
 	return (1);
 }
