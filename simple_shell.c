@@ -23,7 +23,7 @@ void signalHandler(int signum)
 int main(int argc, char **argv)
 {
 	char **toks, *line = NULL, *tmp;
-	int n, loop_error = 0, status = 2;
+	int n, loop_error = 0, status = 0;
 	size_t buf = 0;
 	(void)argc;
 
