@@ -1,24 +1,27 @@
 #include "simple_shell.h"
 
 /**
- * _getenv - the function take the value of the variable
- * @name: this variable is the name of the variable
- * Return: the value of the variable
+ * find_path - find the path
+ * Return: the path
  */
-
-char *_getenv(char *name)
+char *find_path(void)
 {
-	char *token;
-	int i;
+	int x;
+	char **env = environ, *path = NULL;
 
-	for (i = 0; environ[i]; i++)
+	while (*env)
 	{
-		token = strtok(environ[i], "=");
-		if (_strcmp(token, name) == 0)
+		if (_strncmp(*env, "PATH=", 5) == 0)
 		{
-			token = strtok(NULL, "=");
-			return (token);
+			path = *env;
+			while (*path && x < 5)
+			{
+				path++;
+				x++;
+			}
+			return (path);
 		}
+		env++;
 	}
-	return (0);
+	return (NULL);
 }

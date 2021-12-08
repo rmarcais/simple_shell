@@ -15,7 +15,7 @@ char *exist(char *av)
 
 	if (stat(av, &st) == 0)
 		return (av);
-	path = _strdup(getenv("PATH"));
+	path = _strdup(find_path());
 	mainpath  = split_path(path, ":");
 	free(path);
 	path = NULL;
