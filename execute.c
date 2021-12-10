@@ -12,7 +12,7 @@ int execute(char **av)
 
 	if (!pid)
 	{
-		if (execve(av[0], av, NULL) == -1)
+		if (execve(av[0], av, environ) == -1)
 		{
 			perror(av[0]);
 			exit(EXIT_FAILURE);
