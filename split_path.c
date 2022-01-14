@@ -11,7 +11,6 @@ char **split_path(char *av, char *delimiter)
 	char *token;
 	int i = 0;
 
-	/*av = _strdup(getenv("PATH"));*/
 	mainpath = malloc(sizeof(char *));
 	if (mainpath == NULL)
 		return (NULL);

@@ -33,7 +33,6 @@ char *exist(char *av)
 		if (stat(bin, &st) == 0)
 		{
 			free(mainpath);
-			mainpath[0] = 0;
 			av = _strdup(bin);
 			free(bin);
 			bin = NULL;
